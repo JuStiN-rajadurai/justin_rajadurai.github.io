@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Justin Rajadurai · Portfolio & Resume</title>
+  <meta name="description" content="Portfolio & resume of Justin Rajadurai — PHP/CodeIgniter developer exploring Rust/Actix, MySQL, and modern web tooling." />
+  <style>
+    :root{
+      --bg:#0b0d10;--panel:#11151a;--muted:#8da0b3;--text:#e5edf5;--acc:#7dd3fc;--chip:#1c2530;--good:#34d399;--warn:#f59e0b;--bad:#ef4444;
+      --print-bg:#ffffff;--print-text:#111827;--print-muted:#4b5563;--print-acc:#2563eb
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;line-height:1.6;background:var(--bg);color:var(--text)}
+    a{color:var(--acc);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1050px;margin:0 auto;padding:24px}
+    header{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:center;background:var(--panel);padding:16px 18px;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    .avatar{width:96px;height:96px;border-radius:18px;background:linear-gradient(135deg,#1f2937,#0ea5e9);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:28px}
+    .id h1{margin:0;font-size:28px;letter-spacing:.2px}
+    .id p{margin:4px 0 0;color:var(--muted)}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:1px solid #223243;background:#0f141a;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer}
+    .btn.primary{background:var(--acc);color:#0b1320;border-color:transparent}
+    .grid{display:grid;grid-template-columns:2fr 1fr;gap:18px;margin-top:18px}
+    section{background:var(--panel);padding:18px;border-radius:18px}
+    h2{margin:.2rem 0 1rem;font-size:20px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{font-size:13px;padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid #233142;color:#cfe7ff}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .item{padding:12px;border:1px solid #1f2b37;border-radius:12px}
+    .item h3{margin:.1rem 0 .4rem;font-size:16px}
+    .muted{color:var(--muted)}
+    .timeline{position:relative;margin-left:6px}
+    .timeline:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:#1f2b37}
+    .t{position:relative;padding-left:24px;margin:0 0 14px}
+    .t:before{content:"";position:absolute;left:2px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--acc)}
+    .keyvals{display:grid;grid-template-columns:auto 1fr;gap:8px 12px}
+    footer{margin:18px 0 40px;text-align:center;color:var(--muted)}
+    .note{font-size:13px;color:var(--muted)}
+    .sr{border:1px dashed #243243;padding:10px 12px;border-radius:12px;margin-top:12px}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0}
+
+    /* Print styles */
+    @media print{
+      body{background:var(--print-bg);color:var(--print-text)}
+      header,section{background:white;border:1px solid #e5e7eb;box-shadow:none}
+      .btn{display:none}
+      a{color:var(--print-acc)}
+      .chip{background:#eef2ff;color:#1f2937;border-color:#c7d2fe}
+    }
+  </style>
+  <script>
+    function printDoc(){window.print()}
+    function dlJSON(){
+      const data = document.querySelector('#resume-json').textContent;
+      const blob = new Blob([data], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'justin-rajadurai-resume.json'; a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</head>
+<body>
+  <div class="wrap" itemscope itemtype="https://schema.org/Person">
+    <header>
+      <div class="avatar" aria-hidden="true">JR</div>
+      <div class="id">
+        <h1 itemprop="name">Justin Rajadurai</h1>
+        <p><strong>PHP / CodeIgniter Developer</strong> • Learning Rust (Actix & Yew) • MySQL • JS/jQuery • Bootstrap • AWS basics</p>
+        <p class="muted">Languages: English, Tamil</p>
+      </div>
+      <div class="cta">
+        <button class="btn" onclick="printDoc()">Print / Save PDF</button>
+        <button class="btn" onclick="dlJSON()">Download JSON</button>
+        <a class="btn primary" href="mailto:you@example.com">Contact</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section>
+        <h2>Profile</h2>
+        <p>PHP web developer (3+ years with PHP & CodeIgniter 3) focusing on building pragmatic, reliable web apps and REST APIs. Recently exploring Rust with Actix Web for a POS backend with JWT auth and MySQL. Comfortable with classic LAMP patterns, jQuery/Bootstrap UI work, and production troubleshooting (SMTP, uploads, pagination, dynamic forms, and printing workflows).</p>
+
+        <div class="sr">
+          <div class="note">Last 10 days · Highlights</div>
+          <ul class="list">
+            <li>Improved email templates (audit/product scheme) — cleaned signatures, added logos, removed unwanted text; moved updates to demo & live.</li>
+            <li>Worked through SMTP connection issues and configuration hygiene.</li>
+            <li>Used S3 for image hosting and discussed CloudFront/signed URL best practices.</li>
+            <li>Set up SFTP/WinSCP access patterns on AWS EC2; contrasted with shared-hosting FTP.</li>
+            <li>Reviewed Base64 image embedding for email templates and size optimization.</li>
+            <li>Explored UI tweaks (anchor title styling, black/white badge styles) and Core PHP request handling.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Core Skills</h2>
+        <div class="chips">
+          <span class="chip">PHP · CodeIgniter 3</span>
+          <span class="chip">MySQL · SQL</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">JavaScript · jQuery</span>
+          <span class="chip">Bootstrap 4.1.3</span>
+          <span class="chip">Rust · Actix Web</span>
+          <span class="chip">Yew (0.21)</span>
+          <span class="chip">JWT Auth</span>
+          <span class="chip">AWS EC2 · S3</span>
+          <span class="chip">Email (SMTP/PHPMailer)</span>
+          <span class="chip">Image uploads & Base64</span>
+          <span class="chip">Pagination & Data tables</span>
+          <span class="chip">Printing & CSS for PDFs</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="t">
+            <h3>PHP Web Developer — i3matrix Pvt Ltd <span class="muted">(Sep 24, 2024 – Aug 11, 2025)</span></h3>
+            <ul class="list">
+              <li>Maintained and extended CodeIgniter 3 apps and CI3 REST API services.</li>
+              <li>Built and refined POS-related workflows; added dynamic tables, modals, validation (SweetAlert), and print-friendly layouts.</li>
+              <li>Troubleshot PHPMailer SMTP connectivity; improved mail templates for audits and product schemes.</li>
+              <li>Optimized image handling (mobile camera uploads; adjusted server <code>max_size</code> and compression) and explored Base64 for inline mail assets.</li>
+              <li>Implemented pagination that preserves numbering across pages; added weekly calendar header updates via fetch.</li>
+            </ul>
+          </div>
+          <div class="t">
+            <h3>Learning Track — Rust/Actix POS Backend <span class="muted">(2025)</span></h3>
+            <ul class="list">
+              <li>Structured Actix Web project (handlers/models/routes/utils) with JWT authentication and MySQL.</li>
+              <li>Account & session flows (registration/login/logout); Argon2 hashing; SQLx integration; environment-driven configuration.</li>
+              <li>Frontend login/redirect logic, clean file organization (<code>mod.rs</code> patterns).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <div class="two-col">
+          <div class="item">
+            <h3>POS (Rust · Actix · MySQL · JWT)</h3>
+            <p class="muted">Backend-first point-of-sale learning project with secure auth, modular architecture, and clean routing.</p>
+            <ul class="list">
+              <li>Auth (register/login/logout), JWT middleware, Argon2 password hashing.</li>
+              <li>MySQL models via SQLx; environment-based config (<code>DATABASE_URL</code>).</li>
+            </ul>
+          </div>
+          <div class="item">
+            <h3>CI3 Email & Reporting Suite</h3>
+            <p class="muted">Improved audit/report mail templates, product scheme notifications, and printing workflows.</p>
+            <ul class="list">
+              <li>Integrated templates across demo & production; cleaned signatures & assets.</li>
+              <li>Resolved SMTP and file upload issues; consistent pagination and dynamic forms.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="grid">
+      <section>
+        <h2>Selected Problem-Solving</h2>
+        <ul class="list">
+          <li><strong>Uploads from mobile cameras failing:</strong> Increased server <code>max_size</code> to 10MB and normalized processing.</li>
+          <li><strong>Pagination sequence across pages:</strong> Corrected numbering so subsequent pages continue (11, 21, …).</li>
+          <li><strong>Weekly calendar UI:</strong> Dynamically updated <code>&lt;thead&gt;</code> via fetch when changing weeks.</li>
+          <li><strong>Dynamic forms:</strong> Added/removed rows with preserved sequence and validation feedback.</li>
+          <li><strong>POS UI:</strong> Calculated subtotals live from qty×rate for multiple items.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <div class="keyvals">
+          <div class="muted">Email</div><div><a href="mailto:you@example.com">you@example.com</a></div>
+          <div class="muted">Phone</div><div>+91-XXXXXXXXXX</div>
+          <div class="muted">Location</div><div>India</div>
+          <div class="muted">GitHub</div><div><a href="#" rel="nofollow">github.com/yourusername</a></div>
+        </div>
+        <p class="note" style="margin-top:10px">Replace placeholders with your real contact details.</p>
+      </section>
+    </div>
+
+    <section>
+      <h2>Tech Snapshot</h2>
+      <div class="chips">
+        <span class="chip">PHPMailer</span>
+        <span class="chip">SweetAlert</span>
+        <span class="chip">jQuery DOM & Fetch</span>
+        <span class="chip">Bootstrap Modals</span>
+        <span class="chip">AWS EC2 & SFTP</span>
+        <span class="chip">S3 + (CloudFront ready)</span>
+        <span class="chip">DataTables / custom tables</span>
+        <span class="chip">Print CSS & IFrame print</span>
+      </div>
+    </section>
+
+    <footer>
+      <div class="note">© <span id="y"></span> Justin Rajadurai — This single-file HTML is optimized for printing and quick hosting (GitHub Pages, Netlify, Vercel).</div>
+    </footer>
+
+    <!-- Machine-readable JSON Resume (downloadable) -->
+    <script id="resume-json" type="application/json">
+      {
+        "basics": {
+          "name": "Justin Rajadurai",
+          "label": "PHP / CodeIgniter Developer; learning Rust/Actix",
+          "email": "you@example.com",
+          "location": {"countryCode": "IN"},
+          "profiles": [{"network":"GitHub","username":"yourusername","url":"https://github.com/yourusername"}]
+        },
+        "skills": [
+          {"name":"PHP/CodeIgniter 3"},
+          {"name":"MySQL/SQL"},
+          {"name":"REST APIs"},
+          {"name":"JavaScript/jQuery"},
+          {"name":"Bootstrap 4.1.3"},
+          {"name":"Rust/Actix Web"},
+          {"name":"Yew 0.21"},
+          {"name":"JWT Auth"},
+          {"name":"AWS EC2/S3"},
+          {"name":"PHPMailer & SMTP"}
+        ],
+        "work": [
+          {
+            "name": "i3matrix Pvt Ltd",
+            "position": "PHP Web Developer",
+            "startDate": "2024-09-24",
+            "endDate": "2025-08-11",
+            "summary": "Maintained CI3 apps & REST APIs; mail templates; uploads; pagination; printing; dynamic forms.",
+            "highlights": [
+              "Improved audit & product scheme email templates",
+              "Fixed SMTP connectivity issues",
+              "Handled mobile camera uploads (10MB limit)",
+              "Consistent pagination numbering",
+              "Weekly calendar header updates via fetch"
+            ]
+          }
+        ],
+        "projects": [
+          {
+            "name": "POS backend (Rust/Actix)",
+            "description": "JWT-secured backend with MySQL and SQLx; Argon2 hashing; modular handlers/routes.",
+            "keywords": ["Rust","Actix","MySQL","JWT","SQLx"]
+          },
+          {
+            "name": "CI3 Email & Reporting",
+            "description": "Audit/report templates, product scheme notifications, printing & pagination improvements.",
+            "keywords": ["PHP","CodeIgniter","PHPMailer"]
+          }
+        ]
+      }
+    </script>
+
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+</body>
+</html>
